@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+
+<a href = "/blog">Main blog Page</a>
+
+<a href="/newpost">Add a Blog Entry</a>
+<center><h1>{{entry.title}}</h1></center>
+<p>{{entry.body}}</p>
+{% endblock %}

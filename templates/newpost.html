@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<a href = "/blog">Main blog Page</a>
+
+<a href="/newpost">Add a Blog Entry</a>
+
+
+
+<center><h1>Add a Blog Entry</h1></center>
+
+<form action="/newpost" method="post">
+    <table>
+            <tr>
+                <div style="display:inline-block;margin-right:20px;">
+                    <label for="title">Title for your new blog</label>
+                    <input name="title" id="title" type="text" value="{{ new_title }}">
+                   <span class="error">{{title_error}}</span>
+                </div>
+                
+            </tr>
+            <br>
+            <tr>
+                <div style="display:inline-block;margin-right:20px;">
+                <label for="body_entry">Your new blog</label>
+                <textarea id="body_entry" name="body" >{{ new_body }}</textarea></br>
+                <span class="error">{{new_body_error}}</span></div>                            
+                
+            </tr>
+        </table>
+        <input type="submit" value="Add Entry">
+    </form>
+
+{% endblock %}
