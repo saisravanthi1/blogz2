@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Register to Get It Done!</h1>
-<form action="/signup" method="post">
+
+<h1 class="padding">Signup!</h1>
+<form  class="padding font" action="/signup" method="post">
     <table>
         <tr>
-            <td><label for="username">Username</label></td>
+            <td><label for="email">Username</label></td>
             <td>
-                <input name="username" type="text" value="{{ username }}">
+                <input name="email" type="text" value="{{email}}">
             </td>
         </tr>
         <tr>
@@ -17,7 +18,7 @@
             </td>
         </tr>
         <tr>
-            <td><label for="verify">Verify Password</label></td>
+            <td><label for="verify">verify password</label></td>
             <td>
                 <input name="verify" type="password">
             </td>

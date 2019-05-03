@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<h1 class="padding">User Posts</h1>
+
+        
+        {% for entry in entries %}
+
+          <a href="/blog?id={{entry.id}}"><h2 class="padding">{{ entry.title }}</h2></a> <!--entries=Blog.query.filter_by(owner_id=user_id).all() -->
+
+          <p  class="padding">{{ entry.body }}</p>
+          <p  class="padding">Written by: <a href="/blog?userid={{entry.owner_id}}">{{ entry.owner.username }}</a></p>
+
+        {% endfor %}
+{% endblock %}

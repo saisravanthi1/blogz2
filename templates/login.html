@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Log in </h1>
-<p>If you don't have an account, you may <a href="/signup">signup</a> for one</p>
-<form action="/login" method="post">
-    <table>
+
+<h1 class="padding">Login </h1>
+<form class="padding font" action="/login" method="post">
+    <table >
         <tr>
             <td><label for="username">Username</label></td>
             <td>
-                <input name="username" type="text" value="{{ username }}">
+               <input name="username" type="text" >
             </td>
         </tr>
         <tr>
@@ -18,6 +18,9 @@
             </td>
         </tr>
     </table>
-    <input type="submit" value="Login">
+    <input type="submit" value="Submit Query">
 </form>
+
+<p class="padding" >Don't have an account?<a href="/signup">Create one!</a></p>
+
 {% endblock %}

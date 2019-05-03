@@ -4,19 +4,56 @@
 
     <head>
 
-        <title>Build a blog</title>
-
-        <style type="text/css">  
+        <title>Blogz</title>
+        <style>
             .error {
                 color: red;     
             }
             input, label{
                 display: block;
             }
-          
-        </style>     
-    </head>   
+            .right{
+                float:right;
+                padding-right: 250px;
+            }
+            .padding{
+                padding-left: 250px;
+            }
+            body{
+                background-color:white;
+            }
+            .padding.font{
+                font-size: 30px;
+            }
+            .spacing{
+                word-spacing: 14px;
+            }
+        </style>      
+        
+     </head>   
     <body>
+        
+            <nav>
+                    <home class="padding">
+                        <space class="spacing"><a href="/">Home</a>
+                        <a href = "/blog" >Allposts</a>
+                        <a href="/login"> Newpost</a></space>
+                    </home>
+                    <login class="right">
+                   
+                        <space class="spacing"><a href="./login">login</a>
+                        <a href="./logout">logout</a></space>
+                    </login>
+
+
+            </nav>
+            <ul class="padding">{% with messages = get_flashed_messages(with_categories=True) %}
+                    {% for category,message in messages %}
+                    <li class= "{{category}}">{{message}}</li>
+                    {% endfor %}
+                {% endwith %}
+                </ul>   
+        
 
             {% block content %}    
 

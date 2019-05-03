@@ -6,19 +6,26 @@
 
 <a href="/newpost">Add a Blog Entry</a>
 
-<center><h1>Build a blog</h1></center>
 
-    {% for entry in all_entries %}
+ <ul>
+    {% for entry in entries %}
         <li>
             <h1>
-                <a href="/blog?id={{ entry.id }}">{{ entry.title }}</a>
+                <a href="/blog?id={{ entry.id }}"> {{ entry.title }}</a>
             </h1>
-            <h3>{{ entry.body }}</h3>          
+            <h3>{{ entry.body }}</h3> 
+            {% for user in users %}
+               {% if entry.owner_id == user.id %}
+            <h1>
+                <a href="/blog?userid={{ user.id }}">{{ user.username }}</a>
+            </h1>
+               {% endif %}
+            {% endfor %}
+
 
         </li>
-        <hr>
-
+    
     {% endfor %}
-
+  </ul>
 
 {% endblock %}
